@@ -5,14 +5,18 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link id="main-css" rel="stylesheet" href="assets/styles/main.css" />
+		<link id="main-css" rel="stylesheet" href="dist/css/theme.css" />
 	</head>
 	<body>
 		<header>
 			<h1>HTML5 Afec Kit</h1>
 			<nav>
 				<ul>
-					<li><a href="" title="">Images</a></li>
+					<li>
+						<a href="#Imbrication_listes" title="Titre de mon ancres"
+							>Lien vers une ancre</a
+						>
+					</li>
 					<li><a href="" title="">Form</a></li>
 					<li><a href="" title="">Grid</a></li>
 				</ul>
@@ -35,8 +39,9 @@
 			</p>
 			<p>
 				Il est également possible de <strong>mettre son texte en gras</strong>,
-				avec des <sup>indices</sup>, du <i>texte en italique</i> ou encore
-				<u>souligné</u> et même <del>barré</del>.
+				avec des <sup>indices supérieurs</sup>, <sub>indices inférieurs</sub>,
+				du <i>texte en italique</i> ou encore <u>souligné</u> et même
+				<del>barré</del>.
 			</p>
 			<p>
 				Au sein d'un paragraphe, il est également possible de faire<br />des
@@ -87,7 +92,7 @@
 				<dd>Langage permettant de styliser une page web.</dd>
 			</dl>
 
-			<h3>L'imbrication de listes</h3>
+			<h3 id="Imbrication_listes">L'imbrication de listes</h3>
 			<ul>
 				<li>
 					Mammifères
@@ -131,27 +136,105 @@
 			</div>
 		</section>
 
-		<div class="content">
-			<form action="" name="">
-				<fieldset>
-					<input type="text" name="nom" />
-				</fieldset>
-				<fieldset>
-					<label for="nom">Nom :</label>
-					<input
-						type="text"
-						id="nom"
-						name="nom"
-						aria-label="Champ pour entrer votre nom" />
-				</fieldset>
-			</form>
-		</div>
+		<section>
+			<h2>Afficher ou cacher un sommaire avec &lt;details&gt;</h2>
+			<h3>Caché par défaut</h3>
+			<details>
+				<summary>Cuba libre</summary>
+				<ul>
+					<li><strong>6 cl</strong> de rhum cubain</li>
+					<li><strong>4 cl</strong> de jus de citron</li>
+					<li><strong>15 cl</strong> de cola</li>
+				</ul>
+			</details>
+			<h3>Ouvert par défaut</h3>
+			<details open="true">
+				<summary>Cuba libre</summary>
+				<ul>
+					<li><strong>6 cl</strong> de rhum cubain</li>
+					<li><strong>4 cl</strong> de jus de citron</li>
+					<li><strong>15 cl</strong> de cola</li>
+				</ul>
+			</details>
+		</section>
 
-		<main data-module-example>
-			<div class="o-container">
-				<button data-id="123456" data-prix="99">Acheter</button>
-			</div>
-		</main>
-		<script src="assets/scripts/app.js" defer></script>
+		<section>
+			<h2>Les images avec &lt;picture&gt;</h2>
+			<picture>
+				<!-- Image pour les petits écrans (jusqu'à 600px) -->
+				<source
+					srcset="https://placehold.co/600x600"
+					media="(max-width: 600px)" />
+
+				<!-- Image pour les écrans moyens (de 601px à 1024px) -->
+				<source
+					srcset="https://placehold.co/1024x1024"
+					media="(max-width: 1024px)" />
+
+				<!-- Image par défaut pour les grands écrans -->
+				<img src="https://placehold.co/1400x1400" alt="Un paysage magnifique" />
+			</picture>
+		</section>
+
+		<section>
+			<h2>Les formulaires</h2>
+			<fieldset>
+				<legend>Informations personnelles</legend>
+				<div class="form-group">
+					<label for="nom">Nom :</label>
+					<input type="text" id="nom" name="nom" />
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email :</label>
+					<input type="email" id="email" name="email" />
+				</div>
+
+				<div class="form-group">
+					<label for="message">Votre message :</label>
+					<textarea id="message" name="message" rows="5" cols="30">
+	Texte par défaut...</textarea
+					>
+				</div>
+
+				<div class="form-group">
+					<label>Genre :</label>
+					<input type="radio" name="genre" value="homme" /> Homme
+					<input type="radio" name="genre" value="femme" /> Femme
+				</div>
+
+				<div class="form-group">
+					<label>Sports pratiqués :</label>
+					<input type="checkbox" name="sport" value="foot" /> Football
+					<input type="checkbox" name="sport" value="tennis" /> Tennis
+					<input type="checkbox" name="sport" value="natation" /> Natation
+				</div>
+
+				<div class="form-group">
+					<label for="pays">Pays :</label>
+					<select id="pays" name="pays">
+						<option value="fr">France</option>
+						<option value="us">États-Unis</option>
+						<option value="jp">Japon</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Envoyer" />
+					<input type="reset" value="Réinitialiser" />
+					<button type="submit">Envoyer</button>
+				</div>
+			</fieldset>
+		</section>
+		<section>
+			<fieldset>
+				<legend>Informations personnelles</legend>
+				<label for="nom">Nom :</label>
+				<input type="text" id="nom" name="nom" />
+
+				<label for="email">Email :</label>
+				<input type="email" id="email" name="email" />
+			</fieldset>
+		</section>
 	</body>
 </html>
