@@ -1,17 +1,6 @@
-:root {
-    
-}
+@import "elements/reset";
+@import "elements/document";
 
-*, :after, :before {
-    box-sizing: border-box;
-}
+@import "settings/config.colors";
 
-body {
-    background: #fff;
-}
-
-section {
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #dadada;
-}
+@import "components/sections";
