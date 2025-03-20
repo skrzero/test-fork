@@ -1,6 +1,7 @@
-@import "elements/reset";
-@import "elements/document";
+@use 'elements/reset';
+@use 'elements/document';
 
-@import "settings/config.colors";
+@use 'settings/config.colors';
 
-@import "components/sections";
+@use 'components/sections';
+
